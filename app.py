@@ -30,12 +30,12 @@ with col3:
 st.subheader('모델 활용')
 st.write('**** 다음을 입력해주세요. 인공지능이 당신의 유튜브 채널의 성과를 예측해드립니다!')
 
-a = st.number_input(' 구독자 수가 몇 명인가요? ', USD=0)      #초기값은 0
-b = st.number_input(' 영상의 조회수를 입력해주세요. ', USD=0)     # 초기값은 0
-c= st.number_input(' 영상의 시청 시간을 입력해주세요. ', USD=0.0 )     # 초기값은 0.0
+a = st.number_input(' 구독자 수가 몇 명인가요? ', value=0)      #초기값은 0
+b = st.number_input(' 영상의 조회수를 입력해주세요. ', value=0)     # 초기값은 0
+c= st.number_input(' 영상의 시청 시간을 입력해주세요. ', value=0.0 )     # 초기값은 0.0
 
 
-if st.button(' 성과예측'):            # 사용자가 '성과예측' 버튼을 누르면
+if st.button(' 성과예측(USD)'):            # 사용자가 '성과예측' 버튼을 누르면
         input_data = [[a,b,c]]     # 사용자가 입력한 a,b,c 를 input_data에 저장하고
         p = model.predict(input_data)         # model이 예측한 값을 p에 저장한다
         st.write('인공지능의 예측 성과는', p)
